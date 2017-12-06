@@ -1,0 +1,45 @@
+<apex:page controller="CustomQuotesController" id="thisPage">
+    <apex:sectionHeader title="Quotes" subtitle="Home"/>
+<apex:form >
+<apex:pageBlock >
+
+<apex:outputPanel rendered="{!NOT(hasResults)}">
+No records to display
+</apex:outputPanel>
+
+<b>Display rows:</b>
+<a href="#"  onClick="window.parent.location.href='/apex/CustomQuotePage?rows=10'">10</a>&nbsp;|&nbsp;
+<a href="#"  onClick="window.parent.location.href='/apex/CustomQuotePage?rows=25'">25</a>&nbsp;|&nbsp;
+<a href="#"  onClick="window.parent.location.href='/apex/CustomQuotePage?rows=75'">75</a>&nbsp;|&nbsp;
+<a href="#"  onClick="window.parent.location.href='/apex/CustomQuotePage?rows=100'">100</a>&nbsp;|&nbsp;
+<a href="#"  onClick="window.parent.location.href='/apex/CustomQuotePage?rows=200'">200</a>&nbsp;|&nbsp;
+<a href="#"  onClick="window.parent.location.href='/apex/CustomQuotePage?rows=All'">All</a>
+
+<div style="width:100%; margin-top:5px; height:200px;overflow:scroll;">
+<apex:pageBlockTable width="100%" value="{!allQuotes}"  rendered="{!hasResults}" id="related" var="quotes">
+
+<apex:column >
+<apex:facet name="header">Name</apex:facet>
+<a href="#" onClick="window.parent.location.href='/{!quotes.Id}'">{!quotes.Name}</a>
+</apex:column>
+
+<apex:column >
+<apex:facet name="header">Account Name</apex:facet>
+<a href="#" onClick="window.parent.location.href='/{!quotes.Opportunity.Account.Id}'">{!quotes.Opportunity.Account.name}</a>
+</apex:column>
+
+<!--<apex:column >
+<apex:facet name="header">Opportunity Name</apex:facet>
+<a href="#" onClick="window.parent.location.href='/{!quotes.Opportunity.Id}'">{!quotes.Opportunity.name}</a>
+</apex:column>
+
+<apex:column value="{!quotes.IsSyncing}" />-->
+
+<apex:column value="{!quotes.ExpirationDate}" />
+<apex:column value="{!quotes.CreatedById}" />
+
+</apex:pageBlockTable>
+</div>
+</apex:pageBlock>
+</apex:form>
+</apex:page>

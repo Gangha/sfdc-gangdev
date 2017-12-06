@@ -1,0 +1,10 @@
+<apex:page >
+
+    <script>
+        window.onload = function(){
+            sforce.one.navigateToURL('https://na17.salesforce.com/apex/CreatePerformerPage',true);
+            //sforce.one.navigateToURL('https://google.com',false);
+        }
+    </script>
+
+</apex:page>

@@ -1,0 +1,18 @@
+<apex:page controller="ProductsController">
+    <apex:pageBlock title="Products Without Price Books">
+    
+    	<apex:pageBlockTable value="{!prodWOPB}" var="p">
+           <!-- <apex:column headerValue="Id">
+                
+            </apex:column> -->
+            <apex:column headerValue="Name">
+                <apex:outputLink value="{!baseUrl}/{!p.Id}">{!p.Name}</apex:outputLink>
+            </apex:column>
+            
+            <apex:column value="{!p.IsActive}"/>
+            <apex:column value="{!p.ProductCode}"/>            
+        
+        </apex:pageBlockTable>
+    
+    </apex:pageBlock>
+</apex:page>

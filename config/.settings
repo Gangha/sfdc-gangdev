@@ -1,0 +1,17 @@
+{
+    "projectName": "My Dev",
+    "username": "gangsfdc@gmail.com.big",
+    "id": "882c9300-6a50-11e7-b264-af55d07419ae",
+    "namespace": "gangdev",
+    "orgType": "developer",
+    "loginUrl": "https://login.salesforce.com/",
+    "instanceUrl": "https://gangdev-dev-ed.my.salesforce.com",
+    "workspace": "/Users/gangha/Workspaces/Mavensmate",
+    "subscription": [
+        "ApexClass",
+        "ApexComponent",
+        "ApexPage",
+        "ApexTrigger",
+        "StaticResource"
+    ]
+}
